@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@media all {
+  .featherlight {
+    background-color: transparentize($black, .6);
+    .featherlight-content {
+      background: $black;
+      cursor: auto;
+      color: $white;
+      .lazy-yt .youtube-play.fab.fab-youtube {
+        font-size: .7em;
+        color: transparentize(white, .2);
+        &:hover {
+          color: transparentize(#cd201f, .3);
+        }
+        &:before {
+          text-shadow: 0 0 16px transparentize($black, .2);
+        }
+      }
+    }
+  }
+}

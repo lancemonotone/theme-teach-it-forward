@@ -1,0 +1,103 @@
+.page-template-page-events {
+  #main .events-list li.event-item.active .event-details {
+      .video-container {
+        padding: 6px 33px 6px 20px;
+      }
+    }
+  #main .events-list li.event-item .location-date div .title{
+    font-size: 24px;
+    max-width: 50%;
+  }
+}
+
+
+.page-template-page-tiftoday,
+.page-template-page-pwp {
+  #main {
+    .social-list {
+      .social-item {
+        max-width: 50%;
+        width: 50%;
+        float: left;
+        height: 480px;
+        &.quote {
+          width: 100%;
+          max-width: 100%;
+        }
+        h3, .h2 {
+          font-size: 3rem;
+        }
+        .img {
+          width: 100%;
+          height: auto;
+        }
+        .table-cell{
+          padding: 0 28px;
+        }
+      }
+      .featured-content.active {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.page-template-page-tif_stories {
+  #main {
+    .social-list {
+      .entry-content{
+        padding-left: 0;
+        padding-right: 0;
+      }
+      & > div {
+        width: 50%;
+        float: left;
+        @include clearfix;
+        &.width-45{
+          width: 45%;
+        }
+        &.width-55{
+          width: 55%;
+        }
+        .social-item {
+          height: 200px;
+          max-width: 100%;
+          width: 100%;
+          float: none;
+          border-left: 1px solid #3E3E45 !important;
+          h3 {
+            text-align: left;
+          }
+          p{
+            text-align: left;
+          }
+          .table-cell{
+            padding: 0 28px;
+          }
+        }
+      }
+      .juicer-feed {
+        max-width: 100%;
+        width: 100%;
+        float: none;
+        .j-stack{
+          padding-right: 30px !important; //override juicer
+          .feed-item{
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+#scroll_arrow{
+  background: transparent;
+  bottom: 0px;
+  width:50px;
+  .arrow-scroll{
+    width:50px;
+  }
+}
+#content {
+  font-size: .875em; 
+}

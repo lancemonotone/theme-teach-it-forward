@@ -1,0 +1,413 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+  font-size:1.375rem;
+}
+.header, .home #content{
+  padding: 0 30px 0;
+}
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+
+.page.home #content #main, .archive.tax-priorities #content #main .priorities-top{
+    display:  -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 57px 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    -ms-grid-column-gap: 57px;
+    grid-column-gap: 57px;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 36px 20px 85px;
+    .video-container{
+        padding: 0;
+    }
+    a.button {
+      font-size: 2rem;
+    }
+  .col1{
+      display: grid;
+      -ms-grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
+      -ms-grid-template-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+      padding-top: 30px;
+      -ms-grid-column: 1;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      -ms-grid-row: 1;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      padding-left: 0;
+      &.priorities-description{
+        padding: 0px;
+        h2{
+          display: block;
+          font-size: 2.5em;
+          margin-top: 0;
+        }
+      }
+     .progress{
+              zoom: 100%;
+              -ms-grid-column: 1;
+              grid-column-start: 1;
+              grid-column-end: 1;
+              -ms-grid-row: 1;
+              grid-row-start: 3;
+              grid-row-end: 3;
+      }
+     
+  }
+  .col2{
+    width: 100%;
+    -ms-grid-column: 3;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    float: none;
+    margin-left: 0;
+  }
+  .mobile-title{
+    display: none;
+  }
+}
+.page.home #content #main p{
+    line-height: 31px;
+}
+
+
+/*********************
+HEADER STYLES
+*********************/
+
+
+
+/*********************
+CONTENT
+*********************/
+#content {
+  .video-container {
+    padding-bottom: 85px;
+  }
+  nav {
+	display: block;
+	padding: 0;
+	ul {
+	  li {
+		margin: 0 10px;
+	  }
+	}
+  }
+}
+
+.page-template {
+  .entry-content {
+    padding: 0;
+    p {
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: justify;
+      font-size: 19px;
+      line-height:1.5em;
+    }
+  }
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer-buttons {
+  a.button {
+    font-size: 2rem;
+  }
+}
+
+.footer {
+ ul.contact {
+   margin-bottom: 0;
+   li { line-height:1.4em; }
+ }
+  .wms-home-graphic {
+    max-width:none;
+    position:absolute;
+    right:0;
+    bottom:0;
+    text-align:right;
+    img {
+      margin-bottom:-10px;
+    }
+  }
+  #inner-footer { }
+}
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links {
+	ul {
+		li {
+			a {
+				&:hover {}
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+} /* end .footer-links */
+
+h1, .h1 {
+  font-size: 4.21052632em;
+  line-height: 1.25em;
+  margin-top: 0.3125em;
+  margin-bottom: 0.625em;
+}
+
+h2, .h2 {
+  font-size: 3em;
+  line-height: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.priority-cat-list{
+  h2, .h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+h3, .h3 {
+  font-size: 1.63157895em;
+  line-height: 1.61290323em;
+  margin-top: 0.80645161em;
+  margin-bottom: 0em;
+}
+
+h4, .h4 {
+  font-size: 1em;
+  line-height: 1.31578947em;
+  margin-top: 1.31578947em;
+  margin-bottom: 0em;
+}
+
+h5, .h5 {
+  font-size: 1em;
+  line-height: 1.31578947em;
+  margin-top: 1.31578947em;
+  margin-bottom: 0em;
+}
+
+/*
+WILLIAMS TIF CUSTOM STYLES
+*/
+
+.page-template-page-events {
+  #main {
+	.events-list {
+	  li.event-item {
+		.event-info {
+		  .location-date {
+			//font-size: 1.875rem;
+		  }
+		  .title, h4 {
+			font-size: 1.875rem;
+		  }
+		}
+	  }
+	}
+  }
+}
+
+.page-template-page-tiftoday, .page-template-page-pwp {
+  #main {
+    //article {background-color:blue;}
+	.social-list {
+	  .social-item {
+		img {
+		  width: auto;
+		}
+        h3, .h2 {
+          font-size:3rem;
+        }
+		&.icon-progress, .icon-participation {
+		  .big-number, h3.h2 {
+			font-size: 6rem;
+		  }
+		}
+	  }
+	}
+  }
+}
+.page-template-page-priorities {
+   #content{
+          padding: 0 60px 0;
+  }
+  .entry-content{
+        padding: 0 0 30px 0;
+  }
+  #main {
+    display:  -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 60px 1fr 60px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+    padding: 36px 20px 0;
+    .entry-content {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 2;
+
+      grid-column-start: 1;
+      grid-column-end: span 1;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      text-align: right;
+      padding: 51px 0 30px 0;
+      h2{
+        font-size: 34px;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+      .intro{
+          font-size: 17px;
+          line-height: 23px;
+          width: 86%;
+          float: right;
+          text-align: right;
+      }
+    }
+    .item{
+      overflow: hidden;
+      h2{
+        font-size: 28px;
+      }
+      p{
+        font-size: 17px;
+        line-height: 23px;
+      }
+       a.priority-cat-landing {
+        background: linear-gradient(rgba(0,0,0, 0) 34%, rgba(0, 0, 0, 0.9));
+      }
+    }
+    .item:nth-of-type(1){
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 6;
+      -ms-grid-row-span: 9;
+
+      grid-column-start: 1;
+      grid-column-end:  1;
+      grid-row-start: 4;
+      grid-row-end: span 5;
+    }
+     .item:nth-of-type(2){
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 9;
+
+      grid-column-start: 2;
+      grid-column-end:  2;
+      grid-row-start: 2;
+      grid-row-end: span 5;
+    }
+     .item:nth-of-type(3){
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 9;
+
+      grid-column-start: 3;
+      grid-column-end:  3;
+      grid-row-start: 1;
+      grid-row-end: span 5;
+    }
+     .item:nth-of-type(4){
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 11;
+      -ms-grid-row-span: 9;
+
+      grid-column-start: 2;
+      grid-column-end:  2;
+      grid-row-start: 7;
+      grid-row-end: span 5;
+    }
+     .item:nth-of-type(5){
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 10;
+      -ms-grid-row-span: 9;
+
+      grid-column-start: 3;
+      grid-column-end:  3;
+      grid-row-start: 6;
+      grid-row-end: span 5;
+    }
+  }
+}
+
+.tax-priorities {
+  .priorities-top {
+	.priorities-description {
+      p {
+        margin: 20px auto;
+        text-align: justify;
+        max-width: 900px;
+      }
+	}
+  }
+  .priorities-all {
+    .priority-cat {
+      .priority-cat-description {
+        margin: 20px auto;
+        text-align: justify;
+        max-width: 900px;
+      }
+      .priority-posts {
+        .priority {
+          .entry-content {
+            max-width: none;
+            margin-right:60px;
+          }
+          .post-img {
+            float: left;
+            margin-right: 30px;
+            
+          }
+        }
+      }
+    }
+  }
+}

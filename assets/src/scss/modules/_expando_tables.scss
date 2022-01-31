@@ -1,0 +1,117 @@
+.Rtable {
+  margin: 0 0 3em 0;
+  padding: 0;
+  li{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style: none;
+    .Rtable-cell {
+      box-sizing: border-box;
+      padding: 0.8em 1.2em;
+      overflow: hidden;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      width: 100%;
+      border-bottom: solid 10px #000;
+      background: rgba(112, 128, 144, 0.2);
+      > {
+        h1, h2, h3, h4, h5, h6 {
+          margin: 0;
+        }
+      }
+      &.hiddenSmall {
+        display: none;
+      }
+      &.omega{
+        font-size: 15px;
+        line-height:19px;
+      }
+    }
+  }
+}
+
+/* Fallback
+==================================== */
+.no-flexbox .Rtable {
+  display: block;
+  li {
+    .Rtable-cell {
+      width: 100%;
+    }
+  }
+}
+
+
+/* Accordion TIF Styling
+==================================== */
+
+.Accordion {
+  position: relative;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  margin: 0 0 0.5em 0;
+  padding: 0.6em 0.6em 0.6em 2em;
+  text-align: left;
+  border: solid 3px #4a0c61;
+  background-color: #5E368C;
+  font-weight: bold;
+  color: #002525;
+  text-decoration: none;
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  &:hover {
+    outline: none;
+    -webkit-filter: contrast(150%);
+    filter: contrast(150%);
+  }
+  &[aria-selected="true"] {
+    margin-bottom: 0;
+    outline: none;
+    -webkit-filter: contrast(150%);
+    filter: contrast(150%);
+  }
+  &:before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 0.3em;
+    margin-top: -1.14285714em;
+    font-weight: normal;
+    font-size: 2em;
+    line-height: 2em;
+    background-size: 2em 2em;
+  }
+  &[aria-selected="true"]:before {
+    content: "-";
+  }
+}
+
+/* Breakpoints
+==================================== */
+
+@media all and (min-width: 768px) {
+  .Accordion {
+    display: none;
+  }
+  .Rtable--collapse {
+    li {
+      .Rtable-cell {
+        &.hiddenSmall {
+          display: block;
+        }
+      }
+    }
+  }
+  /* Table column sizing */
+  .Rtable-cell{
+    .Rtable.Rtable--3cols li & {
+      width: 33.33%;
+    }
+  }
+}

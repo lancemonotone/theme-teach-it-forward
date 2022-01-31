@@ -1,0 +1,289 @@
+
+
+.progress{
+            max-width: 100%;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+      .donut:nth-of-type(1){
+              margin: auto;
+              grid-column-start: 1;
+              grid-column-end: 1;
+              grid-row-start: 1;
+              grid-row-end: 1;
+      }
+      .donut:nth-of-type(2){
+              margin: auto;
+              grid-column-start: 3;
+              grid-column-end: 3;
+              grid-row-start: 1;
+              grid-row-end: 1;
+      }
+      .donut:nth-of-type(3){
+              margin: auto;
+              grid-column-start: 2;
+              grid-column-end: 2;
+              grid-row-start: 1;
+              grid-row-end: 1;
+              left: 10px;
+      }
+}
+.donut {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  zoom: 40%;
+  -moz-transform: scale(0.5);
+  &.donut-110{
+    zoom: 35%;
+    -moz-transform: scale(0.42);
+  }
+}
+.donut:hover{
+        #donut-graph{
+            stroke-width: 5;
+        }
+}
+.donut-copy {
+  text-align: left;
+  top: 52%;
+  left: 53%;
+  position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%); 
+   -ms-transform: translate(-50%, -50%); 
+   -o-transform: translate(-50%, -50%); 
+   transform: translate(-50%, -50%);
+
+}
+
+.donut-title,
+.donut-secondary {
+  display: block;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+.donut-title,
+.donut-spic {
+  color: #fff;
+  font-weight: 200;
+}
+
+.donut-title {
+  font-size: 69px;
+  position: relative;
+  animation: donutTitleFadeLeft 800ms 200ms cubic-bezier(.99,.01,.22,.94) forwards;
+  opacity: 0;
+  left: 23px;
+  font-family: Haettenschweiler;
+  .donut-110 &{
+    font-size: 89px;
+  }
+}
+
+.donut-spic {
+  font-family: "canada-type-gibson", sans-serif;
+  font-size: 32px;
+  line-height: 30px;
+  padding-left: 2px;
+  content: "%";
+  animation: donutTitleFadeRight 800ms 200ms cubic-bezier(.99,.01,.22,.94) forwards;
+  opacity: 0;
+}
+.donut-label{
+  text-align: center;
+  color: #fff;
+  font-weight: 200;
+  font-family: "Haettenschweiler", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-flex;
+  line-height: 20px;
+  top: 85%;
+  left: 22%;
+  position: absolute;
+  font-size: 25px;
+  letter-spacing: 1.3px;
+  background-color: rgba(#000, .5);
+  padding: 3px;
+   -webkit-text-size-adjust: 100%;
+  .donut-110 & {
+      top: 91%;
+      left: 21%;
+      font-size: 32px;
+  }
+}
+
+.iOS{
+  .donut-title{
+    font-size: 23px;
+    .donut-110 &{
+      font-size: 30px;
+    }
+  }
+   .donut-label{
+    font-size: 13px;
+    .donut-110 &{
+    }
+  }
+  .donut-spic {
+    font-size: 22px;
+  }
+}
+
+
+@keyframes donutTitleFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes donutTitleFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// The stroke-dasharray is the circumfrence of the circle.
+// which can be worked out using 2*pi*r
+//
+// To animate this, you need to work out the percentage of this value. So for example,
+// to show 84%, we would need 84% of 628.32 which is 527.7888. This would show 26%, so
+// we then take this away from the original value, which would leave 100.5312
+
+// The radius of the circle
+$radius90: 90;
+$circumference90: (3.14 * (2 * $radius90));
+ .donut-svg__circle--r90 {
+    stroke-dasharray: #{$circumference90};
+    stroke-dashoffset: #{$circumference90};
+    opacity: 0;
+  }
+@for $i from 64 through 100 {  
+
+  // This is the percentage that we want to show  * 1 to cast as int
+  $stroke_percentage: $circumference90 - (($i / 100) * $circumference90);
+  
+  .donut-svg__circle--r90.donut-svg__circle--#{$i} {
+      animation: donut-show-r90-#{$i} 1200ms cubic-bezier(.99,.01,.62,.94) .5s forwards;
+      transition: stroke-dasharray 400ms ease-in-out;
+      stroke-dashoffset: #{$stroke_percentage};
+  }
+
+  @keyframes donut-show-r90-#{$i} {
+    0%{
+      stroke-dasharray: #{$circumference90};
+      stroke-dashoffset: #{$circumference90};
+    }
+    100% {
+      stroke-dasharray: #{$circumference90};
+      stroke-dashoffset: #{$stroke_percentage};
+      opacity: 1;
+    }
+  }
+}
+
+$radius110: 110;
+$circumference110: (3.14 * (2 * $radius110));
+ .donut-svg__circle--r110 {
+    stroke-dasharray: #{$circumference110};
+    stroke-dashoffset: #{$circumference110};
+    opacity: 0;
+  }
+@for $i from 64 through 100 {  
+
+  // This is the percentage that we want to show  * 1 to cast as int
+  $stroke_percentage: $circumference110 - (($i / 100) * $circumference110);
+  
+  .donut-svg__circle--r110.donut-svg__circle--#{$i} {
+      animation: donut-show-r110-#{$i} 1200ms cubic-bezier(.99,.01,.62,.94) .5s forwards;
+      transition: stroke-dasharray 400ms ease-in-out;
+      stroke-dashoffset: #{$stroke_percentage};
+  }
+
+  @keyframes donut-show-r110-#{$i} {
+    0%{
+      stroke-dasharray: #{$circumference110};
+      stroke-dashoffset: #{$circumference110};
+    }
+    100% {
+      stroke-dasharray: #{$circumference110};
+      stroke-dashoffset: #{$stroke_percentage};
+      opacity: 1;
+    }
+  }
+}
+
+
+.donut-svg {
+   transform: rotate(139deg);
+}
+
+
+/*********************
+LARGE 1200
+*********************/
+@media only screen and (min-width: $large) {
+  .donut{
+    zoom: 100%;
+  -moz-transform: scale(1);
+    &.donut-110{
+      zoom: 100%;
+      -moz-transform: scale(1);
+    }
+    .donut:nth-of-type(1){
+      float: left;
+      margin: 130px 0 0 29px;
+    }
+  }
+  .progress{
+      display: block;
+       .donut:nth-of-type(1){
+          float: left;
+          margin: 130px 0 0 29px;
+      }
+  }
+  .donut-label{
+    top: 74%;
+    text-align: left;
+    line-height: 23px;
+    .donut-110 & {
+        left: 21%;
+        top: 78%;
+        font-size: 25px;
+      }
+
+  }
+  .iOS{
+  .donut-title{
+    font-size: 46x;
+    .donut-110 &{
+      font-size: 60px;
+    }
+  }
+   .donut-label{
+    font-size: 26px;
+    .donut-110 &{
+    }
+  }
+  .donut-spic {
+    font-size: 44px;
+  }
+}
+}
+

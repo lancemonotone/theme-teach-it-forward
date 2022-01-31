@@ -1,0 +1,94 @@
+/******************************************************************
+Theme Name: Teach It Forward
+Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="https://github.com/eddiemachado/bones/issues" title="Bones Issues">Bones Issues</a> page on Github. You'll want to customize this for your clients with your own information.
+Author: Charlie Bent, Will Bruno, Williams Web Team
+Version: 1.7
+Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support
+*/
+
+/**
+    Style overrides
+**/
+
+body.home { background-color: #0f0f11; }
+
+/* SHARING */
+/* section overide */
+.tax-priorities .priorities-all .priority-cat .priority-posts .priority .article-footer {
+    /*display: block;*/
+    padding: 0;
+    margin: 0;
+}
+
+.tax-priorities .priorities-all .priority-cat .priority-posts .priority .article-footer .sharing-links {
+    position: relative;
+    float: right;
+    right: 5px;
+    height: 1.6em;
+    width: 50px;
+}
+
+.priority-cat.term-number-2 .fa-ces { color: #363738; }
+
+.priority-cat.term-number-2 .fa-ces:hover { color: white; }
+
+@media (max-width: 481px) {
+    .priority .article-footer {
+        height: 1.5rem;
+    }
+}
+
+/*------------ FOOTER ---------*/
+@media only screen and (min-width: 500px) and (max-width: 959px) {
+    .footer .wms-home-graphic {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-align: right;
+    }
+
+    .footer .wms-home-graphic img {
+        margin-bottom: -5px;
+    }
+}
+
+/*------------- PRIORITIES ------------*/
+.tax-priorities .priorities-all .priority-cat.term-number-2 .priority-posts .priority {
+    border-color: #363738;
+}
+
+@media only screen and (min-width: 650px) and (max-width: 959px) {
+    .tax-priorities .priorities-all .priority-cat .priority-posts .priority .entry-content {
+        max-width: none;
+        margin-right: 50px;
+    }
+
+    .tax-priorities .priority-cat .priority-posts .entry-content .post-img {
+        float: left;
+        margin-right: 20px;
+        max-width: 50%;
+    }
+}
+
+/*------------- EVENTS ------------*/
+
+/* Video Carousel */
+/*.page-template-page-events #main .events-list li.event-item.active::before,
+.page-template-page-events #main .events-list li.event-item:hover:not(.active)::before {
+    display: none;
+}
+
+.page-template-page-events #main .events-list li.event-item .event-video-slider .video-item .details .title {
+    font-size: .8rem;
+}
+
+.page-template-page-events #main .events-list li.event-item .event-video-slider .video-item .image {
+    width: auto;
+}
+.page-template-page-events #main .events-list li.event-item.active:hover {
+    display: inherit;
+}
+*/
+.page-template-page-events #main .events-list li.event-item.upcoming:not(.active) a.button {
+    margin-top: 120px !important;
+}

@@ -1,0 +1,70 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+$text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #000000;
+$white:             #fff;
+
+$light-gray:        #a7a9ab;
+$gray:              #6d6e70;
+$text-color:        #ffffff;
+$meta-gray:         #9fa6b4;
+
+$tan:               #eceee5;
+
+$green:             #7dd667;
+
+$bones-pink:        #f01d4f;
+$blue:              #2980b9;
+
+$link-color:        $white;
+$link-hover:        darken($link-color, 9%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+$almost_black: #1a1a1a;
+$nearly_black: #0f0f11;
+
+// williams colors
+$purple: #4a0c61;
+$light-purple: #5E368C;
+$orange: #f9a64a;
+$black-tinted: #363738;
+$black-bk: #282828;
+$off-white: #ececec;
+
+/*********************
+BREAKPOINT VARIABLES
+*********************/
+$mobile_portrait: 710px;
+$mobile: 783px;
+$tablet: 910px;
+$desktop: 985px;
+$large: 1200px;
+
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
